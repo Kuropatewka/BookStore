@@ -1,0 +1,13 @@
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/App.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/model/Book.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/services/IUserService.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/controllers/UserController.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/controllers/CommonController.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/controllers/AuthenticationController.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/AppConfiguration.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/model/Author.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/controllers/AdminController.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/dao/impl/UserDAOImpl.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/model/User.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/dao/IUserDAO.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/services/impl/UserServiceImpl.java
