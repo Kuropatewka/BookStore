@@ -86,7 +86,35 @@
     top: 165px;
     left: 5%;
     width: 90%;
-    height: 100px;
-    margin: 0 auto;
+}
+
+.book{
+    border: solid 1px black;
+    margin: 8px;
+    padding: 8px;
     background-color: pink;
+}
+
+.book > div {
+    width: 100%;
+
+}
+
+.label {
+    display: inline-block;
+    width: 30%;
+}
+
+.value {
+    display: inline-block;
+    width: 69%;
+}
+
+.author-name {
+    display: inline-block;
+}
+
+.author-surname {
+    display: inline-block;
+    margin-left: 10px;
 }
