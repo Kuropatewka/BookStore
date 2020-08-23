@@ -2,7 +2,7 @@ package pl.camp.it.library.model;
 
 import javax.persistence.*;
 
-@Entity(name = "tbook")
+@Entity(name = "tbook") // zostanie utworzona nowa tabelka - entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +13,8 @@ public class Book {
     private Author author;
     @Column(nullable = false, unique = true, length = 20)
     private String isbn;
+    @Enumerated(EnumType.STRING)
+    private Category category;
 
     public int getId() {
         return id;
@@ -46,6 +48,14 @@ public class Book {
         this.isbn = isbn;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -54,5 +64,31 @@ public class Book {
                 ", author=" + author +
                 ", isbn='" + isbn + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) { // set nie sprawdza po equals, jest nie potrzebna
+        if(o instanceof Book) {
+            Book b = (Book) o;
+            return b.id == this.id;
+
+            /*if(b.id == this.id) {
+                return true;
+            } else {
+                return false;
+            }*/
+
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() { // sety nie porownuja po equals a po hashCode
+        return this.id;
+    }
+
+    public enum Category { // istenienie kategorii nie ma sensu bez istnienia książki
+        COOKING,
+        BAKING
     }
 }

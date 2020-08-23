@@ -40,6 +40,7 @@ public class AdminController {
         Book book1 = new Book();
         book1.setIsbn("123123124123");
         book1.setTitle(" Sekrety włoskiej kuchnii");
+        book1.setCategory(Book.Category.COOKING);
 
         Author author1 = new Author();
         author1.setName(" Elena");
@@ -50,6 +51,7 @@ public class AdminController {
         Book book2 = new Book();
         book2.setIsbn("2342342354234234");
         book2.setTitle(" Sekrety polskiej kuchnii");
+        book2.setCategory(Book.Category.COOKING);
 
         Author author2 = new Author();
         author2.setName(" Jeffrey");
@@ -60,6 +62,7 @@ public class AdminController {
         Book book3 = new Book();
         book3.setIsbn("12323423434");
         book3.setTitle(" Sekrety chorwackiej kuchnii");
+        book3.setCategory(Book.Category.COOKING);
 
         Author author3 = new Author();
         author3.setName(" Piotr");
@@ -70,6 +73,7 @@ public class AdminController {
         Book book4 = new Book();
         book4.setIsbn("3242342342");
         book4.setTitle(" Moje wypieki i desery");
+        book4.setCategory(Book.Category.BAKING);
 
         Author author4 = new Author();
         author4.setName(" Dorota");
@@ -80,6 +84,7 @@ public class AdminController {
         Book book5 = new Book();
         book5.setIsbn("23423423423423423");
         book5.setTitle(" Moje wypieki i desery dla dzieci");
+        book5.setCategory(Book.Category.BAKING);
 
         book5.setAuthor(author4);
 

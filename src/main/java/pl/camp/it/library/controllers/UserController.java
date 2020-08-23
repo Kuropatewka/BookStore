@@ -12,6 +12,8 @@ import pl.camp.it.library.services.IUserService;
 import pl.camp.it.library.session.SessionObject;
 
 import javax.annotation.Resource;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Controller
 public class UserController {  // niech aplikacja nadaje session id, a to session id beda wychwytwac ciasteczka i bedziemy zapietywac dane
@@ -30,6 +32,10 @@ public class UserController {  // niech aplikacja nadaje session id, a to sessio
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(@ModelAttribute User user, @RequestParam String password2) {
+
+        Pattern compiledPattern = Pattern.compile(" .*[0-9]+.* "); //wyrażenie regularne - pattern - kompilujemy i matcher czy pasuje, bez slasha w java
+        Matcher matcher = compiledPattern.matcher(user.getPassword());
+        matcher.matches();
 
         boolean registerResult = this.userService.registerUser(user, password2);
 

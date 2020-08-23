@@ -26,6 +26,7 @@ public class AuthenticationController {
         model.addAttribute("user", new User());
 
         if(sessionObject.getUser() == null) {
+            model.addAttribute("isLogged", false);
             return "login";
         } else {
             return "redirect:/main";

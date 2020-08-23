@@ -5,12 +5,17 @@
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/controllers/CommonController.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/controllers/AuthenticationController.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/AppConfiguration.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/controllers/BasketController.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/dao/IBookDAO.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/model/Author.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/dao/impl/BookDAOImpl.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/services/impl/BasketServiceImpl.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/controllers/AdminController.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/dao/impl/UserDAOImpl.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/dao/impl/AuthorDAOImpl.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/dao/IAuthorDAO.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/model/User.java
+/home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/services/IBasketService.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/dao/IUserDAO.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/services/impl/UserServiceImpl.java
 /home/piotr/IdeaProjects/library/src/main/java/pl/camp/it/library/services/impl/BookServiceImpl.java
