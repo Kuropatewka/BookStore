@@ -14,7 +14,7 @@ public class UserServiceImpl implements IUserService {
     IUserDAO userDAO; // Spring potrzebuje referencje i jesli je potrzebuje to ich uzywa
 
     @Override
-    public boolean authenticate(User user) {
+    public boolean authenticate(User user) { // pokrycie testami 100%
         User userFromDataBase = userDAO.getUserByLogin(user.getLogin());
 
         if(userFromDataBase == null) {
@@ -30,7 +30,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void addUser(User user) {
+    public void addUser(User user) { // testowanie tego nie ma sensu, bo testowalibysmy mocka
         this.userDAO.addUser(user);
     }
 

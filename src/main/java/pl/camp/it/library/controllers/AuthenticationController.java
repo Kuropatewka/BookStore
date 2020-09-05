@@ -12,7 +12,7 @@ import pl.camp.it.library.session.SessionObject;
 
 import javax.annotation.Resource;
 
-@Controller
+@Controller // controller jest ciezko przetestowac, zalezy nam zeby testowac logike czyli service
 public class AuthenticationController {
 
     @Autowired //poszukaj w pudeleczku takiej klasy i wstrzyknij mi te informacje
