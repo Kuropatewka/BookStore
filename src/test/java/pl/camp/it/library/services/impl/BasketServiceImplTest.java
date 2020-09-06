@@ -7,8 +7,10 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import pl.camp.it.library.AppConfigurationTest;
 import pl.camp.it.library.dao.IAuthorDAO;
 import pl.camp.it.library.dao.IBookDAO;
@@ -19,6 +21,7 @@ import pl.camp.it.library.session.SessionObject;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = AppConfigurationTest.class)
+@WebAppConfiguration // do udawanego mocka z połączeniem z przeglądarką
 public class BasketServiceImplTest {
 
     @MockBean
@@ -36,18 +39,17 @@ public class BasketServiceImplTest {
     @Autowired
     SessionObject sessionObject;
 
+    @Autowired
+    MockHttpSession mockHttpSession; // mockowa sesja http, imitacja połaczenia do bazy
+
     @Before
     public void setUpMocks() {
 
-        Book book = new Book();
-        book.setId(5);
-        book.setCategory(Book.Category.BAKING);
-        book.setAuthor(null);
-        book.setTitle("testy jednostkowe");
-        book.setIsbn("adasdasdasd");
+        Book book = generateBook();
 
-        Mockito.when(this.bookDAO.getBookById(5)).thenReturn()
+        Mockito.when(this.bookDAO.getBookById(5)).thenReturn(book);
     }
+
     @Test
     public void addingUniqueBookToBasketTest() {
         int bookId = 5;
@@ -58,5 +60,34 @@ public class BasketServiceImplTest {
         int result = this.sessionObject.getBasket().size();
 
         Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void addingExistingBookToBasketTest() {
+        int bookId = 5;
+        int expectedBasketSize = 1;
+        int expectedBookCount = 3;
+
+        this.sessionObject.getBasket().put(generateBook(), 2);
+
+        this.basketService.addBookToBasket(bookId);
+
+        int result = this.sessionObject.getBasket().size();
+
+        int bookCount = this.sessionObject.getBasket().get(generateBook());
+
+        Assert.assertEquals(expectedBasketSize, result);
+        Assert.assertEquals(expectedBookCount, bookCount);
+    }
+
+    private Book generateBook() {
+        Book book = new Book();
+        book.setId(5);
+        book.setCategory(Book.Category.BAKING);
+        book.setAuthor(null);
+        book.setTitle("testy jednostkowe");
+        book.setIsbn("adasdasdasd");
+
+        return book;
     }
 }
